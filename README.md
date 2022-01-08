@@ -4,7 +4,7 @@
 
 My personal CLI (Command Line Interface) app to manage my invoices via Web Scraping.
 
-> **WIP (Work in Progress):** For now only the list command is fully implemented. The generate command will be finished in the next couple of weeks.
+> **_WIP (Work in Progress)_:** For now only the list command is fully implemented. The generate command will be finished in the next couple of weeks.
 
 ## Motivation
 
