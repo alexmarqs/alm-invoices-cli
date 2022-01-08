@@ -23,7 +23,7 @@ I'm using a SaaS (Software as a Service) to generate invoices in my own company 
 
 Btw, as I'm talking about CLI apps, there is another cool package that you can use to simplify shell commands executions if needed: [Sheeljs](https://github.com/shelljs/shelljs).
 
-## How to run
+## How to execute the CLI
 
 As I'm not distributing the CLI to the public / NPM registry, you can install it globally in your machine via Yarn or NPM:
 
