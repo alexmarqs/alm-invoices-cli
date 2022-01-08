@@ -1,0 +1,10 @@
+# Ignore
+.vscode
+.github
+.husky
+dist
+coverage
+node_modules
+.eslint*
+package*.json
+bin

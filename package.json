@@ -1,0 +1,67 @@
+{
+  "name": "alm-invoices",
+  "version": "0.0.1",
+  "description": "CLI to manage invoices",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Alexandre Marques",
+  "license": "MIT",
+  "bin": {
+    "alm-invoices": "./dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "invoices",
+    "alm",
+    "pkg",
+    "script",
+    "scrapper"
+  ],
+  "scripts": {
+    "prebuild": "rimraf ./dist && rimraf ./bin",
+    "build": "tsc",
+    "postbuild": "yarn package:macos",
+    "start": "yarn build && node dist/index.js",
+    "dev": "ts-node --transpile-only src/index.ts",
+    "dev:debug": "yarn dev --inspect-brk",
+    "type-check": "tsc --noEmit",
+    "package:macos": "pkg . --targets node14-macos-x64 --output bin/macos/alm-invoices -C GZip && cp -R ./node_modules/puppeteer/.local-chromium bin/macos/chromium && tar -czf bin/macos/alm-invoices.tar.gz bin/macos/alm-invoices",
+    "precommit": "yarn type-check && yarn lint-staged",
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/gradient-string": "^1.1.2",
+    "@types/inquirer": "^8.1.3",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.4",
+    "pkg": "^5.5.1",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "gradient-string": "^2.0.0",
+    "inquirer": "^8.2.0",
+    "meow": "^7.1.1",
+    "puppeteer": "^13.0.1"
+  },
+  "pkg": {
+    "scripts": "dist/**/*.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,json}": "eslint --fix",
+    "src/**/*.{ts,js,md,json}": "prettier --write --ignore-unknown --no-error-on-unmatched-pattern"
+  }
+}
