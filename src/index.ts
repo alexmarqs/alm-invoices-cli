@@ -88,7 +88,7 @@ const main = async () => {
           if (tableRow[0]) {
             printMsg(
               `ID: ${
-                isNaN(Number(tableRow[0].slice(-1))) // handle special case
+                isNaN(Number(tableRow[0].slice(-1))) // handle special case (remove last char if not a number)
                   ? tableRow[0].slice(0, -1)
                   : tableRow[0]
               } Date: ${tableRow[1]} Client: ${tableRow[2]}`
