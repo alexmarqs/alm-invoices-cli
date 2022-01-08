@@ -35,6 +35,8 @@ As I'm not distributing the CLI to the public / NPM registry, you can install it
 
 Let’s say I want to distribute this for only certain persons that don't have a proper Node environment in their machine. For that, I package my CLI as a single executable, using the `pkg` module from Vercel. The binary is available in the `bin/<os>` folder (also available in compressed format). For now, only macOS is supported.
 
+**Requirements**: Set up the following environment variables (please check `.env.example`): `USER_INVOICE`, `INVOICE_URL` and `PWD_INVOICE` in your system.
+
 ## Resources
 
 https://medium.com/geekculture/building-a-node-js-cli-with-typescript-packaged-and-distributed-via-homebrew-15ba2fadcb81
